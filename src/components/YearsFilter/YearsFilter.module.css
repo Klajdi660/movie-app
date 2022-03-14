@@ -1,0 +1,16 @@
+.selectOption {
+  width: 20.7%;
+  margin: auto;
+  margin-top: -200px;
+  margin-bottom: 30px;
+  margin-left: 0px;
+  color: 'hsl(0, 0%, 40%)',
+}
+
+@media screen and (max-width: 992px) {
+    .selectOption {
+      width: 50%;
+      max-width: 50%;
+      
+    }
+} 

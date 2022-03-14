@@ -1,0 +1,7 @@
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: space-between;
+    margin-top: -30px;
+}
