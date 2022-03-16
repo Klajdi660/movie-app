@@ -7,10 +7,12 @@ import SearchIcon from '@material-ui/icons/Search';
 import MovieIcon from '@material-ui/icons/Movie';
 import WatchLaterIcon from '@material-ui/icons/WatchLater';
 import FavoritesContext from '../../store/favorites-context';
+import LaterContext from '../../store/later-context';
 
 
 const MainNavigation = () => {
     const favoritesCtx = useContext(FavoritesContext);
+    const laterCtx = useContext(LaterContext)
 
     return ( 
         <header onClick={() => window.scroll(0, 0)} className={classes.header}>
@@ -24,7 +26,7 @@ const MainNavigation = () => {
                         <Link to="/favorites">My favorites  <FavoriteIcon /> <span className={classes.badge}>{favoritesCtx.totalFavorites}</span></Link>
                     </li>
                     <li>
-                        <Link to="/later">Watch Later <WatchLaterIcon /><span className={classes.badge}></span></Link>
+                        <Link to="/later">Watch Later <WatchLaterIcon /><span className={classes.badge}>{laterCtx.totalLater}</span></Link>
                     </li>
                     <li>
                         <Link to="/search">Search <SearchIcon /> </Link>

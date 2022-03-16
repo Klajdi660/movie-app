@@ -25,8 +25,16 @@
     padding: 0 5px;
 }
   
-.fav {
+.fav{
     justify-content: right;
-    margin-top: -18px;
+    margin-top: 0px;
+    margin-right: -10px;
+    cursor: pointer;
+}
+
+.later{
+    justify-content: left;
+    margin-top: -44.5px;
+    margin-left: -5px;
     cursor: pointer;
 }

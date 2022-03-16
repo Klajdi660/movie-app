@@ -2,12 +2,12 @@ import React from 'react';
 import Select from 'react-select';
 import classes from './YearsFilter.module.css';
 
-const CategoriesFilter = ({years, filterMovie}) => {
+const YearsFilter = ({years, filterMovie}) => {
     const options = years.map((movie) => ({ value: movie, label: movie }));
     return (
         <div>  
             <Select
-                className={classes.selectOption}
+                className={classes.selectOptionYear}
                 options={options}
                 placeholder={"Sort by Year"}
                 onChange={filterMovie}
@@ -16,4 +16,4 @@ const CategoriesFilter = ({years, filterMovie}) => {
     )
 }
 
-export default CategoriesFilter;
+export default YearsFilter;
