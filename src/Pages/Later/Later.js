@@ -17,7 +17,7 @@ const Later = () => {
                     <MovieItem 
                         key={movieItem.id}
                         id={movieItem.id}
-                        poster={movieItem.posterUrl}
+                        poster={movieItem.poster}
                         title={movieItem.title}
                         year={movieItem.year}
                         genres={movieItem.genres}

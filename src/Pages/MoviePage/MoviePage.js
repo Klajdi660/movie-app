@@ -43,11 +43,14 @@ const MoviePage = () => {
     setMoviesList(filterMovie);
   }
   //filter movies based on their genres categories 
-  const filterMovie1 = (genres) => {
+  const filterMovie1 = (genres1) => {
+    const filterMovie = [];
     console.log('gnr', genres);
-    const filterMovie1 = data.filter((movie)=> movie.genres === genres.value);
-    setMoviesList(filterMovie1);
-  }
+    data
+      .filter((movie)=> movie.genres.includes(genres1.value))
+      .map((movie1) => filterMovie.push(movie1));
+    setMoviesList(filterMovie);
+  };
   
 
   return(
