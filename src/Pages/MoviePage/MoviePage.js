@@ -44,7 +44,7 @@ const MoviePage = () => {
   }
   //filter movies based on their genres categories 
   const filterMovie1 = (genres) => {
-    console.log(genres);
+    console.log('gnr', genres);
     const filterMovie1 = data.filter((movie)=> movie.genres === genres.value);
     setMoviesList(filterMovie1);
   }
