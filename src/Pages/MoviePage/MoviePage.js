@@ -14,7 +14,7 @@ const allYears = [ ...new Set(data.map((value)=> value.year))];
 allYears.sort((a, b) => b - a);
 
 const allGenres = [ ...new Set(data1.map((value)=> value))];
-//allGenres.sort((a, b) => b - a);
+allGenres.sort();
 
 console.log('catg', allYears);
 console.log('catgnr', allGenres);
