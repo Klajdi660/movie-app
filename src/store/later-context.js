@@ -17,13 +17,11 @@ export function LaterContextProvider(props) {
            return prevLater.concat(laterMovie);
         });
     }
-
     function removeLaterHandler(movieId){
         setLater((prevLater) => {
             return prevLater.filter(movie => movie.id !== movieId);
         })
     }
-
     function itemIsLaterHandler(movieId){
         return later.some(movie => movie.id === movieId);
     }
