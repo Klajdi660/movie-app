@@ -17,13 +17,11 @@ export function FavoritesContextProvider(props) {
            return prevFavorite.concat(favoriteMovie);
         });
     }
-
     function removeFavoriteHandler(movieId){
         setFavorites((prevFavorite) => {
             return prevFavorite.filter(movie => movie.id !== movieId);
         })
     }
-
     function itemIsFavoriteHandler(movieId){
         return favorites.some(movie => movie.id === movieId);
     }
