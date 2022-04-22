@@ -4,7 +4,6 @@ import "./Carousel.css";
 
 const Carousel = () => {
     const [index, setIndex] = useState(0);
-
     const mod = (n, m) => {
         let result = n % m;
         // Return a positive value
@@ -30,7 +29,7 @@ const Carousel = () => {
                     const indexRight = mod(index + 1, cards.length);
 
                     let className ="card";
-
+        
                     if (i === index) {
                         className ="card card--active";
                     } else if (i === indexRight) {
