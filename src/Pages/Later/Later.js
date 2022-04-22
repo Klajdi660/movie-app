@@ -2,7 +2,6 @@ import { useContext } from 'react';
 import LaterContext from '../../store/later-context';
 import MovieItem from '../../components/Movie/MovieItem';
 
-
 const Later = () => {
     const laterCtx = useContext(LaterContext);
     
