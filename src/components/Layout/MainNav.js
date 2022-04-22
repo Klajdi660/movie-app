@@ -1,14 +1,13 @@
 
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
-import classes from "./MainNav.module.css";
+import FavoritesContext from '../../store/favorites-context';
+import LaterContext from '../../store/later-context';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import SearchIcon from '@material-ui/icons/Search';
 import MovieIcon from '@material-ui/icons/Movie';
 import WatchLaterIcon from '@material-ui/icons/WatchLater';
-import FavoritesContext from '../../store/favorites-context';
-import LaterContext from '../../store/later-context';
-
+import classes from "./MainNav.module.css";
 
 const MainNavigation = () => {
     const favoritesCtx = useContext(FavoritesContext);
