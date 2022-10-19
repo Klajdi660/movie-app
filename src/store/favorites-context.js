@@ -9,20 +9,19 @@ const FavoritesContext = createContext({
 });
 
 export function FavoritesContextProvider(props) {
-    console.log("prop",props);
     const [favorites, setFavorites] = useState([]);
 
-    function addFavoriteHandler(favoriteMovie){
+    const addFavoriteHandler = (favoriteMovie) => {
         setFavorites((prevFavorite) => {
            return prevFavorite.concat(favoriteMovie);
         });
     }
-    function removeFavoriteHandler(movieId){
+    const removeFavoriteHandler = (movieId) => {
         setFavorites((prevFavorite) => {
             return prevFavorite.filter(movie => movie.id !== movieId);
         })
     }
-    function itemIsFavoriteHandler(movieId){
+    const itemIsFavoriteHandler = (movieId) => {
         return favorites.some(movie => movie.id === movieId);
     }
 
@@ -34,9 +33,11 @@ export function FavoritesContextProvider(props) {
         itemsIsFavorite: itemIsFavoriteHandler
     };
 
-    return <FavoritesContext.Provider value={context}>
-        {props.children}
-    </FavoritesContext.Provider>
+    return (
+        <FavoritesContext.Provider value={context}>
+            {props.children}
+        </FavoritesContext.Provider>
+    );
 }
 
 export default FavoritesContext;

@@ -6,8 +6,7 @@
     justify-content: center;
     margin: auto;
     margin-top: 80px;
-}
-  
+} 
 .paginationBttns a {
     padding: 10px;
     margin: 8px;
@@ -16,7 +15,6 @@
     color: hsl(205, 72%, 37%);
     cursor: pointer;
 }
-  
 .paginationBttns a:hover {
     color: white;
     background-color: hsl(205, 72%, 37%);

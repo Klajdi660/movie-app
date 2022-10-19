@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import FavoritesContext from '../../store/favorites-context';
@@ -19,16 +18,30 @@ const MainNavigation = () => {
             <nav>
                 <ul>
                     <li>
-                        <Link to="/">Movie <MovieIcon /> </Link>
+                        <Link to="/">
+                            Movie 
+                            <MovieIcon /> 
+                        </Link>
                     </li>
                     <li>
-                        <Link to="/favorites">My favorites  <FavoriteIcon /> <span className={classes.badge}>{favoritesCtx.totalFavorites}</span></Link>
+                        <Link to="/favorites">
+                            My favorites  
+                            <FavoriteIcon /> 
+                            <span className={classes.badge}>{favoritesCtx.totalFavorites}</span>
+                        </Link>
                     </li>
                     <li>
-                        <Link to="/later">Watch Later <WatchLaterIcon /><span className={classes.badge}>{laterCtx.totalLater}</span></Link>
+                        <Link to="/later">
+                            Watch Later 
+                            <WatchLaterIcon />
+                            <span className={classes.badge}>{laterCtx.totalLater}</span>
+                        </Link>
                     </li>
                     <li>
-                        <Link to="/search">Search <SearchIcon /> </Link>
+                        <Link to="/search">
+                            Search 
+                            <SearchIcon /> 
+                        </Link>
                     </li>
                 </ul>
             </nav>

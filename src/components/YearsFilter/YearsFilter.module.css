@@ -8,9 +8,8 @@
 }
 
 @media screen and (max-width: 992px) {
-    .selectOptionYear {
-      width: 50%;
-      max-width: 50%;
-      
-    }
+  .selectOptionYear {
+    width: 50%;
+    max-width: 50%;  
+  }
 } 

@@ -4,7 +4,7 @@ import classes from './GenresFilter.module.css';
 
 const GenresFilter = ({genres, filterMovie1}) => {
     const options = genres.map((movie) => ({ value: movie, label: movie }));
-    console.log('gnrs', options);
+
     return (
         <div>  
             <Select

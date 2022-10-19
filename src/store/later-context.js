@@ -9,20 +9,19 @@ const LaterContext = createContext({
 });
 
 export function LaterContextProvider(props) {
-    console.log("prop",props);
     const [later, setLater] = useState([]);
 
-    function addLaterHandler(laterMovie){
+    const addLaterHandler = (laterMovie) => {
         setLater((prevLater) => {
            return prevLater.concat(laterMovie);
         });
     }
-    function removeLaterHandler(movieId){
+    const removeLaterHandler = (movieId) => {
         setLater((prevLater) => {
             return prevLater.filter(movie => movie.id !== movieId);
         })
     }
-    function itemIsLaterHandler(movieId){
+    const itemIsLaterHandler = (movieId) => {
         return later.some(movie => movie.id === movieId);
     }
 
@@ -34,9 +33,11 @@ export function LaterContextProvider(props) {
         itemsIsLater: itemIsLaterHandler
     };
 
-    return <LaterContext.Provider value={context}>
-        {props.children}
-    </LaterContext.Provider>
+    return (
+        <LaterContext.Provider value={context}>
+            {props.children}
+        </LaterContext.Provider>
+    );
 }
 
 export default LaterContext;

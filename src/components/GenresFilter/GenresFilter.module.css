@@ -1,16 +1,15 @@
 .selectOptionGenres {
-    width: 20.7%;
-    margin: auto;
-    margin-bottom: 30px;
-    margin-top: -67px;
-    margin-left: 254px;
-    color: 'hsl(0, 0%, 40%)',
-  }
+  width: 20.7%;
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: -67px;
+  margin-left: 254px;
+  color: 'hsl(0, 0%, 40%)',
+}
   
-  @media screen and (max-width: 992px) {
-      .selectOptionGenres {
-        width: 50%;
-        max-width: 50%;
-        
-      }
-  } 
+@media screen and (max-width: 992px) {
+  .selectOptionGenres {
+    width: 50%;
+    max-width: 50%;  
+  }
+} 

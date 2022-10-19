@@ -16,8 +16,6 @@ const MovieItem = (props) => {
   const itemIsLater = laterCtx.itemsIsLater(props.id);
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
-  console.log("image",props.poster)
-
   const toogleFavoriteStatusHandler = () => {
     if(itemIsFavorite){
       favoritesCtx.removeFavorite(props.id)
@@ -30,7 +28,6 @@ const MovieItem = (props) => {
         year:props.year
       });
     }
-    console.log(itemIsFavorite)
   }
 
   const toogleLaterStatusHandler = () => {
@@ -45,7 +42,6 @@ const MovieItem = (props) => {
         year:props.year
       });
     }
-    console.log(itemIsLater)
   }
 
   return(
@@ -55,19 +51,35 @@ const MovieItem = (props) => {
         src={props.poster}
         alt={props.title}
       /> 
-  
-      <span className={classes.title}>{props.title} 
+      <span className={classes.title}>
+        {props.title} 
         (<span className={classes.title}>{props.year}</span>)
       </span>
-      <span className={classes.subTitle}>{props.genres && props.genres.map((movie, index) => {
-        return(
-          <>
-            {index ? ' ' : ''} {movie}
-          </>
-        )})}
+      <span className={classes.subTitle}>
+        {props.genres && props.genres.map((movie, index) => {
+          return(
+            <>
+              {index ? ' ' : ''} {movie}
+            </>
+          )
+        })}
       </span>
-    <span className={classes.fav} onClick={toogleFavoriteStatusHandler}><Checkbox {...label} icon={<FavoriteBorder color="primary" />} checkedIcon={<Favorite />} />{itemIsFavorite}</span>
-    <span className={classes.later} onClick={toogleLaterStatusHandler}><Checkbox {...label} icon={<WatchLaterOutlinedIcon color="primary" />} checkedIcon={<WatchLaterIcon />} />{itemIsLater}</span>
+      <span className={classes.fav} onClick={toogleFavoriteStatusHandler}>
+        <Checkbox 
+          {...label} 
+          icon={<FavoriteBorder color="primary" />} 
+          checkedIcon={<Favorite />} 
+        />
+        {itemIsFavorite}
+      </span>
+      <span className={classes.later} onClick={toogleLaterStatusHandler}>
+        <Checkbox 
+          {...label} 
+          icon={<WatchLaterOutlinedIcon color="primary" />} 
+          checkedIcon={<WatchLaterIcon />} 
+        />
+        {itemIsLater}
+      </span>
     </Card> 
   )
 };

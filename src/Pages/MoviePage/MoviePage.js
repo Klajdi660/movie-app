@@ -15,9 +15,6 @@ allYears.sort((a, b) => b - a);
 const allGenres = [ ...new Set(data1.map((value)=> value))];
 allGenres.sort();
 
-console.log('catg', allYears);
-console.log('catgnr', allGenres);
-
 const MoviePage = () => {
   const [moviesList, setMoviesList] = useState(data.slice(0, 4));
   const [pageNumber, setPageNumber] = useState(0);
@@ -35,12 +32,14 @@ const MoviePage = () => {
   useEffect(() => {
     setMoviesList(data.slice(pageNumber * 8, (pageNumber + 1) * 8));
   }, [pageNumber]);
+
   //filter movies based on their year categories 
   const filterMovie = (year) => {
     console.log(year);
     const filterMovie = data.filter((movie)=> movie.year === year.value);
     setMoviesList(filterMovie);
   }
+
   //filter movies based on their genres categories 
   const filterMovie1 = (genres1) => {
     const filterMovie = [];
@@ -50,7 +49,6 @@ const MoviePage = () => {
       .map((movie1) => filterMovie.push(movie1));
     setMoviesList(filterMovie);
   };
-  
 
   return(
     <main>

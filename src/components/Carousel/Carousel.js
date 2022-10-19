@@ -10,16 +10,13 @@ const Carousel = () => {
         return result >= 0 ? result : result + m;
     };
 
-    //console.log('mod', mod);
-
     const cards = moviesData.movies;
     
     useEffect(() => {
         setTimeout(() => {
         setIndex((index + 1) % cards.length);
-            //console.log(index);
         }, 3000);
-    }, [index]);
+    }, [index, cards]);
 
     return (
         <div className="contanier">
@@ -27,7 +24,6 @@ const Carousel = () => {
                 {cards.map((item, i) => {
                     const indexLeft = mod(index - 1, cards.length);
                     const indexRight = mod(index + 1, cards.length);
-
                     let className ="card";
         
                     if (i === index) {

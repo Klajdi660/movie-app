@@ -31,51 +31,51 @@ const Search = () => {
 
   return (
     <>
-    <div className={classes.search}>
-      <div className={classes.searchInputs}>
-        <input
-          type="text"
-          placeholder="Search for a Movie..."
-          value={wordEntered}
-          onChange={handleFilter}
-        />
-        <div className={classes.searchIcon}>
-          {filteredData.length === 0 ? (
-            <SearchIcon />
-          ) : (
-            <CloseIcon id="clearBtn" onClick={clearInput} />
-          )}
+      <div className={classes.search}>
+        <div className={classes.searchInputs}>
+          <input
+            type="text"
+            placeholder="Search for a Movie..."
+            value={wordEntered}
+            onChange={handleFilter}
+          />
+          <div className={classes.searchIcon}>
+            {filteredData.length === 0 ? (
+              <SearchIcon />
+              ) : (
+              <CloseIcon id="clearBtn" onClick={clearInput} />
+            )}
+          </div>
         </div>
       </div>
-    </div>
-    <div className={classes.templateContainer}>
-      {filteredData.filter((value, key) => { 
-        return value;}
-        )     
-        .map((value, key) => { return (
-          <div className={classes.card}>
-            <img
-              className={classes.poster}
-              src={value.posterUrl}
-              alt={value.title}
-            /> 
-            <span className={classes.title}>{value.title}
-              (<span className={classes.title}>{value.year}</span>)
-            </span>
-            <span className={classes.subTitle}>{value.genres.map((value, index) => {
-              return(
-                <>
-                  {index ? ' ' : ''} {value}
-                </>
-              )})}
-            </span>  
-          </div>
-          );
-        })
-      }
-    </div>
-   </>
-  );
+      <div className={classes.templateContainer}>
+        {filteredData.filter((value, key) => { 
+          return value;
+        })     
+        .map((value, key) => { 
+          return (
+            <div className={classes.card}>
+              <img
+                className={classes.poster}
+                src={value.posterUrl}
+                alt={value.title}
+              /> 
+              <span className={classes.title}>{value.title}
+                (<span className={classes.title}>{value.year}</span>)
+              </span>
+              <span className={classes.subTitle}>{value.genres.map((value, index) => {
+                return (
+                  <>
+                    {index ? ' ' : ''} {value}
+                  </>
+                )})}
+              </span>  
+            </div>
+          )}
+        )}
+      </div>
+    </>
+  )
 }
 
 export default Search;
