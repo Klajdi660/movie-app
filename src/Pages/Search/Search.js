@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import classes from "./Search.module.css";
-import SearchIcon from "@material-ui/icons/Search";
-import CloseIcon from "@material-ui/icons/Close";
+import { 
+  Search as SearchIcon,
+  Close as CloseIcon
+} from "@mui/icons-material";
 import moviesData from "../../db.json";
 
 const Search = () => {
@@ -54,7 +56,7 @@ const Search = () => {
         })     
         .map((value, key) => { 
           return (
-            <div className={classes.card}>
+            <div className={classes.card} key={value.id}>
               <img
                 className={classes.poster}
                 src={value.posterUrl}

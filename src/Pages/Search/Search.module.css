@@ -50,6 +50,7 @@
     background-color: white;
     display: grid;
     place-items: center;
+    cursor: pointer;
 }
   
 input:focus {
@@ -58,10 +59,6 @@ input:focus {
 
 .searchIcon svg {
     font-size: 30px;
-}
-  
-#clearBtn {
-    cursor: pointer;
 }
   
 .poster {

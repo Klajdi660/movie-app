@@ -1,7 +1,7 @@
 import React, {useState, useEffect } from "react";
+import ReactPaginate from 'react-paginate';
 import AvailableMovie from "../../components/Movie/AvailableMovie";
 import Carousel from "../../components/Carousel/Carousel";
-import ReactPaginate from 'react-paginate';
 import YearsFilter from "../../components/YearsFilter/YearsFilter";
 import GenresFilter from "../../components/GenresFilter/GenresFilter";
 import moviesData from "../../db.json";
@@ -25,7 +25,6 @@ const MoviePage = () => {
   const moviePerPage = 8;
   const pageCount = Math.ceil(data.length / moviePerPage);
   const changePage = ({ selected }) => {
-    console.log(selected);
     setPageNumber(selected);
   };
 
@@ -35,7 +34,6 @@ const MoviePage = () => {
 
   //filter movies based on their year categories 
   const filterMovie = (year) => {
-    console.log(year);
     const filterMovie = data.filter((movie)=> movie.year === year.value);
     setMoviesList(filterMovie);
   }
@@ -43,7 +41,7 @@ const MoviePage = () => {
   //filter movies based on their genres categories 
   const filterMovie1 = (genres1) => {
     const filterMovie = [];
-    console.log('gnr', genres);
+    
     data
       .filter((movie)=> movie.genres.includes(genres1.value))
       .map((movie1) => filterMovie.push(movie1));

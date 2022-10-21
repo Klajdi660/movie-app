@@ -2,11 +2,13 @@ import { useContext } from 'react';
 import FavoritesContext from '../../store/favorites-context';
 import LaterContext from "../../store/later-context";
 import Card from "../UI/Card";
-import Checkbox from '@mui/material/Checkbox';
-import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
-import Favorite from '@mui/icons-material/Favorite';
-import WatchLaterOutlinedIcon from '@mui/icons-material/WatchLaterOutlined';
-import WatchLaterIcon from '@mui/icons-material/WatchLater';
+import { Checkbox } from '@mui/material';
+import { 
+  FavoriteBorder as FavoriteBorderIcon,
+  Favorite as FavoriteIcon,
+  WatchLaterOutlined as WatchLaterOutlinedIcon,
+  WatchLater as WatchLaterIcon
+} from '@mui/icons-material';
 import classes from "./MovieItem.module.css";
 
 const MovieItem = (props) => {
@@ -67,8 +69,8 @@ const MovieItem = (props) => {
       <span className={classes.fav} onClick={toogleFavoriteStatusHandler}>
         <Checkbox 
           {...label} 
-          icon={<FavoriteBorder color="primary" />} 
-          checkedIcon={<Favorite />} 
+          icon={<FavoriteBorderIcon color="primary" />} 
+          checkedIcon={<FavoriteIcon />} 
         />
         {itemIsFavorite}
       </span>
