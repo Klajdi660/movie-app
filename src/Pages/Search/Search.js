@@ -28,7 +28,6 @@ const Search = () => {
   const clearInput = () => {
     setFilteredData([]);
     setWordEntered("");
-    console.log('filter', filteredData);
   };
 
   return (
