@@ -12,53 +12,54 @@ import {
 import classes from "./MovieItem.module.css";
 
 const MovieItem = (props) => {
+  const {id, poster, title, genres, year} = props;
   const favoritesCtx = useContext(FavoritesContext);
-  const itemIsFavorite = favoritesCtx.itemsIsFavorite(props.id);
+  const itemIsFavorite = favoritesCtx.itemsIsFavorite(id);
   const laterCtx = useContext(LaterContext);
-  const itemIsLater = laterCtx.itemsIsLater(props.id);
+  const itemIsLater = laterCtx.itemsIsLater(id);
   const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
   const toogleFavoriteStatusHandler = () => {
     if(itemIsFavorite){
-      favoritesCtx.removeFavorite(props.id)
+      favoritesCtx.removeFavorite(id)
     } else {
       favoritesCtx.addFavorite({
-        id: props.id,
-        poster: props.poster,
-        title: props.title,
-        genres: props.genres, 
-        year:props.year
+        id: id,
+        poster: poster,
+        title: title,
+        genres: genres, 
+        year: year
       });
     }
   }
 
   const toogleLaterStatusHandler = () => {
     if(itemIsLater){
-      laterCtx.removeLater(props.id)
+      laterCtx.removeLater(id)
     } else {
       laterCtx.addLater({
-        id: props.id,
-        poster: props.poster,
-        title: props.title,
-        genres: props.genres, 
-        year:props.year
+        id: id,
+        poster: poster,
+        title: title,
+        genres: genres, 
+        year: year
       });
     }
   }
 
   return(
-    <Card key={props.id}>
+    <Card key={id}>
       <img
         className={classes.poster}
-        src={props.poster}
-        alt={props.title}
+        src={poster}
+        alt={title}
       /> 
       <span className={classes.title}>
-        {props.title} 
-        (<span className={classes.title}>{props.year}</span>)
+        {title} 
+        (<span className={classes.title}>{year}</span>)
       </span>
       <span className={classes.subTitle}>
-        {props.genres && props.genres.map((movie, index) => {
+        {genres && genres.map((movie, index) => {
           return(
             <>
               {index ? ' ' : ''} {movie}

@@ -1,14 +1,14 @@
 import MainNav from './MainNav';
 import classes from "./Layout.module.css";
 
-const Layout = (props) => {
+const Layout = ({children}) => {
     return (
-        <div>
+        <>
             <MainNav />
             <main className={classes.main}>
-                {props.children}
+                {children}
             </main>
-        </div>
+        </>
     )
 }
 

@@ -3,12 +3,12 @@ import { createContext, useState } from "react";
 const FavoritesContext = createContext({
     favorites: [],
     totalFavorites: 0,
-    addFavorite:(favoriteMovie) => {},
-    removeFavorite:(movieId) => {},
-    itemsIsFavorite:(movieId) => {}
+    addFavorite: () => {},
+    removeFavorite: () => {},
+    itemsIsFavorite: () => {}
 });
 
-export function FavoritesContextProvider(props) {
+export function FavoritesContextProvider({children}) {
     const [favorites, setFavorites] = useState([]);
 
     const addFavoriteHandler = (favoriteMovie) => {
@@ -35,7 +35,7 @@ export function FavoritesContextProvider(props) {
 
     return (
         <FavoritesContext.Provider value={context}>
-            {props.children}
+            {children}
         </FavoritesContext.Provider>
     );
 }

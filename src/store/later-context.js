@@ -3,12 +3,12 @@ import { createContext, useState } from "react";
 const LaterContext = createContext({
     later: [],
     totalLater: 0,
-    addLater:(laterMovie) => {},
-    removeLater:(movieId) => {},
-    itemsIsLater:(movieId) => {}
+    addLater: () => {},
+    removeLater: () => {},
+    itemsIsLater: () => {}
 });
 
-export function LaterContextProvider(props) {
+export function LaterContextProvider({children}) {
     const [later, setLater] = useState([]);
 
     const addLaterHandler = (laterMovie) => {
@@ -35,7 +35,7 @@ export function LaterContextProvider(props) {
 
     return (
         <LaterContext.Provider value={context}>
-            {props.children}
+            {children}
         </LaterContext.Provider>
     );
 }
