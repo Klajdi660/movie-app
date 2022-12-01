@@ -4,7 +4,7 @@ import classes from "./AvailableMovie.module.css";
 const AvailableMovie = (props) => {
   const {moviesList} = props;
   
-  const movies = (moviesList.map((movieItem) => {
+  const movies = moviesList.map((movieItem) => {
     return (
       <MovieItem
         key={movieItem.id}
@@ -15,7 +15,7 @@ const AvailableMovie = (props) => {
         genres={movieItem.genres}
       />
     )
-  }));
+  });
 
   return (
     <div className={classes.home}>
