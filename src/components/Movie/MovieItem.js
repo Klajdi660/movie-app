@@ -48,7 +48,7 @@ const MovieItem = (props) => {
   }
 
   return(
-    <Card key={id}>
+    <Card>
       <img
         className={classes.poster}
         src={poster}
@@ -59,13 +59,11 @@ const MovieItem = (props) => {
         (<span className={classes.title}>{year}</span>)
       </span>
       <span className={classes.subTitle}>
-        {genres && genres.map((movie, index) => {
-          return(
-            <>
-              {index ? ' ' : ''} {movie}
-            </>
-          )
-        })}
+        {genres && genres.map((movie, index) => (
+          <div key={index}>
+            {index ? ' ' : ''} {movie}
+          </div>
+        ))}
       </span>
       <span className={classes.fav} onClick={toogleFavoriteStatusHandler}>
         <Checkbox 

@@ -36,7 +36,7 @@ const Carousel = () => {
 
                     return(
                         <img
-                            key={item.runtime}
+                            key={i}
                             className={className}
                             src={item.posterUrl}
                             alt="card"
